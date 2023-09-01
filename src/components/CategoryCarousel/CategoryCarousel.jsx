@@ -39,7 +39,7 @@ const CategoryCarousel = ({ BgImg, Title, Data }) => {
 
   return (
     <div className="CategoryCarousel">
-       {/* <div
+        <div
         className="CategoryCarousel-left"
         style={{ background: `url(${BgImg}) no-repeat 0px bottom` }}
       >
@@ -58,7 +58,7 @@ const CategoryCarousel = ({ BgImg, Title, Data }) => {
             </Link>
           ))}
         </Slider>
-      </div>  */}
+      </div>  
     </div>
   );
 };
