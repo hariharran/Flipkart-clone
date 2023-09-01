@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState} from "react";
 import "./Navbar.css";
 import { IoSearch } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Login from "../../components/Login/Login"
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../../slices/userslices";
