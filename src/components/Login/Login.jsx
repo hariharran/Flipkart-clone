@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css"
+import "./Login.css";
 import { RxCross2 } from "react-icons/rx";
 import supabase from "../../supabase";
 import { useDispatch } from "react-redux";
@@ -12,41 +12,43 @@ const Login = ({ isopen, setClose }) => {
   const [loginType, setLoginType] = useState(true);
 
   const dispatch = useDispatch();
-
-  const signup = async () => {
+  const signUp = async () => {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
     });
-  
+
     if (error) {
       console.error("Error signing up:", error.message);
     } else {
-      if (data && data.user) {
+      if (data?.user) {
         console.log("Sign up successful. User data:", data.user);
       } else {
-        console.error("Sign up was successful, but user data is null or undefined.");
+        console.error(
+          "Sign up was successful, but user data is null or undefined."
+        );
       }
     }
   };
-  
+
   const login = async () => {
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
-  
+
     if (error) {
       console.error("Error signing in:", error.message);
     } else {
-      if (data && data.user) {
-        dispatch(setUser(data.user));
+      if (data?.user) {
+        console.log("Sign in successful. User data:", data.user);
       } else {
-        console.error("Sign in was successful, but user data is null or undefined.");
+        console.error(
+          "Sign in was successful, but user data is null or undefined."
+        );
       }
     }
   };
-  
 
   return isopen ? (
     <div className="overlay">
@@ -110,5 +112,4 @@ const Login = ({ isopen, setClose }) => {
   );
 };
 
-export default Login
-;
+export default Login;
