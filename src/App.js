@@ -27,6 +27,8 @@ const App = () => {
       console.error("An unexpected error occurred:", error);
     }
   };
+};
+
 
   useEffect(() => {
     getUser();
