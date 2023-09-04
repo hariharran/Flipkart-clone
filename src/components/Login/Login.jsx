@@ -88,7 +88,7 @@ const Login = ({ isopen, setClose }) => {
               Login
             </button>
           ) : (
-            <button className="btn" onClick={signup}>
+            <button className="btn" onClick={signUp}>
               Signup
             </button>
           )}

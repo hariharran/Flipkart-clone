@@ -12,12 +12,13 @@ import { setUser } from "./slices/userslices";
 
 const App = () => {
   const dispatch = useDispatch();
+  
   const getUser = async () => {
     try {
       const { data, error } = await supabase.auth.getSession();
       if (error) {
         console.error("Error getting session:", error);
-      } else if (data && data.session && data.session.user) {
+      } else if (data?.session?.user) {
         dispatch(setUser(data.session.user));
       } else {
         console.error("Session data is missing or incomplete");
