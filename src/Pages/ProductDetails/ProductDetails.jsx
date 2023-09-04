@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import "./ProductDetails.css";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
 import { ProductsData } from "../../ProductsData";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillThunderbolt, AiFillStar } from "react-icons/ai";

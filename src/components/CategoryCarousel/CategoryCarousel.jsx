@@ -4,8 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CategoryBanner from "../CategoryBanner/CategoryBanner";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdOutlineArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Next = (props) => {
@@ -39,7 +38,7 @@ const CategoryCarousel = ({ BgImg, Title, Data }) => {
 
   return (
     <div className="CategoryCarousel">
-        <div
+      <div
         className="CategoryCarousel-left"
         style={{ background: `url(${BgImg}) no-repeat 0px bottom` }}
       >
@@ -49,7 +48,7 @@ const CategoryCarousel = ({ BgImg, Title, Data }) => {
       <div className="CategoryCarousel-right">
         <Slider nextArrow={<Next />} prevArrow={<Prev />} {...Settings}>
           {Data.map((item, index) => (
-            <Link key={index} to={"/products"}>
+            <Link key={item} to={"/products"}>
               <CategoryBanner
                 ImgSrc={item.ImgSrc}
                 Title={item.CategoryName}
@@ -58,7 +57,7 @@ const CategoryCarousel = ({ BgImg, Title, Data }) => {
             </Link>
           ))}
         </Slider>
-      </div>  
+      </div>
     </div>
   );
 };
