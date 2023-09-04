@@ -3,8 +3,7 @@ import "./Banner.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdOutlineArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 const Next = (props) => {
   const { className, onClick } = props;
@@ -40,13 +39,13 @@ const Banner = ({ data }) => {
 
   return (
     <div className="Banner">
-       <Slider nextArrow={<Next />} prevArrow={<Prev />} {...settings}>
+      <Slider nextArrow={<Next />} prevArrow={<Prev />} {...settings}>
         {data.map((item) => (
           <div key={item.id}>
             <img src={item.Imgsrc} alt="" className="Banner-Image" />
           </div>
         ))}
-      </Slider> 
+      </Slider>
     </div>
   );
 };
