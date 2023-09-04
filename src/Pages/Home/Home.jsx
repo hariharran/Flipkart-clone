@@ -1,12 +1,8 @@
 import React from "react";
 import BannerCarousel from "../../components/Banner/Banner";
 import CategoryBar from "../../components/CategoryBar/CategoryBar";
-import Login from "../../components/Login/Login";
 import ProductCarousel from "../../components/CategoryCarousel/CategoryCarousel";
-import { CategoryBarData } from "../../Datas";
-import { CarouselData } from "../../Datas";
-import { BestOf } from "../../Datas";
-
+import { CategoryBarData,CarouselData,BestOf} from "../../Datas";
 import "./Home.css";
 
 const Home = () => {
@@ -16,7 +12,7 @@ const Home = () => {
         <div className="Home-CategoryBar">
           {CategoryBarData.map((item, index) => (
             <CategoryBar
-              key={index}
+              key={item}
               Imgsrc={item.imageSrc}
               CategoryName={item.category}
             />
