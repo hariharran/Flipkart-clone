@@ -32,23 +32,26 @@ const Login = ({ isopen, setClose }) => {
   };
 
   const login = async () => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    if (error) {
-      console.error("Error signing in:", error.message);
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+  if (error) {
+    console.error("Error signing in:", error.message);
+  } else {
+    if (data?.user) {
+      console.log("Sign in successful. User data:", data.user);
     } else {
-      if (data?.user) {
-        console.log("Sign in successful. User data:", data.user);
-      } else {
-        console.error(
-          "Sign in was successful, but user data is null or undefined."
-        );
-      }
+      console.error(
+        "Sign in was successful, but user data is null or undefined. This is unexpected."
+      );
+
+      // You can add additional handling or code here if needed.
+      // For example, you might want to redirect the user to a different page or display a message.
     }
-  };
+  }
+};
+
 
   return isopen ? (
     <div className="overlay">
