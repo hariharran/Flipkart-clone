@@ -17,7 +17,7 @@ const App = () => {
       const { data, error } = await supabase.auth.getSession();
       if (error) {
         console.error("Error getting session:", error);
-      } else if (data && data.session && data.session.user) {
+      } else if (data?.session?.user) {
         dispatch(setUser(data.session.user));
       } else {
         console.error("Session data is missing or incomplete");
@@ -26,6 +26,8 @@ const App = () => {
       console.error("An unexpected error occurred:", error);
     }
   };
+};
+
 
   useEffect(() => {
     getUser();
